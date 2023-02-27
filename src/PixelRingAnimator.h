@@ -10,7 +10,9 @@
 
 //** A data class to represent colors for the PixelRingAnimator.
 //*  It manages the data members and converting to/from and testing
-//*  values.
+//*  values. The 32 bit representation matches that used by the
+//*  Adafruit library, WRGB, so that it can be used interchangeably
+//*  if needed.
 class PixelRingColor {
   public:
     PixelRingColor();
