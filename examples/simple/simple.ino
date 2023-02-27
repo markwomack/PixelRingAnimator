@@ -27,25 +27,25 @@ int effect;
 
 // Sets up a fade effect using just white
 void setupFade() {
-  PixelRingColor startColor;
-  startColor.red = 2;
-  startColor.green = 2;
-  startColor.blue = 2;
-  PixelRingColor endColor;
-  endColor.red = 30;
-  endColor.green = 30;
-  endColor.blue = 30;
+  PixelRingColor startColor(2, 2, 2);
+  PixelRingColor endColor(30, 30, 30);
   
   // Apply effect to ring
   pixelRingAnimator->doFade(&startColor, &endColor, 28);
 }
 
+// Sets up a fade effect between red and blue
+void setupFade2() {
+  PixelRingColor startColor(15, 0, 0);
+  PixelRingColor endColor(0, 0, 15);
+  
+  // Apply effect to ring
+  pixelRingAnimator->doFade(&startColor, &endColor, 15);
+}
+
 // Sets up a spin effect using purple
 void setupSpin() {
-  PixelRingColor baseColor;
-  baseColor.red = 8;
-  baseColor.green = 0;
-  baseColor.blue = 8;
+  PixelRingColor baseColor(8, 0, 8);
   
   // Apply effect to ring
   pixelRingAnimator->doSpin(&baseColor, false);
@@ -53,14 +53,8 @@ void setupSpin() {
 
 // Sets up a countdown effect with black (off) and green
 void setupCountdown() {
-  PixelRingColor baseColor;
-  baseColor.red = 0;
-  baseColor.green = 0;
-  baseColor.blue = 0;
-  PixelRingColor countdownColor;
-  countdownColor.red = 0;
-  countdownColor.green = 8;
-  countdownColor.blue = 0;
+  PixelRingColor baseColor(0, 0, 0);
+  PixelRingColor countdownColor(0, 8, 0);
   
   // Apply effect to ring
   pixelRingAnimator->doCountdown(&baseColor, &countdownColor, true);
@@ -68,14 +62,8 @@ void setupCountdown() {
 
 // Sets up an alternate effect with red and purple
 void setupAlternate() {
-  PixelRingColor colorOne;
-  colorOne.red = 8;
-  colorOne.green = 0;
-  colorOne.blue = 0;
-  PixelRingColor colorTwo;
-  colorTwo.red = 8;
-  colorTwo.green = 0;
-  colorTwo.blue = 8;
+  PixelRingColor colorOne(8, 0, 0);
+  PixelRingColor colorTwo(8, 0, 8);
   
   // Apply effect to ring
   pixelRingAnimator->doAlternate(&colorOne, &colorTwo);
@@ -83,9 +71,9 @@ void setupAlternate() {
 
 void setup() {
   // Create the animator, clear the ring
-  pixelRingAnimator = new PixelRingAnimator(PIXEL_RING_PIN, NUM_PIXELS, NEO_PIXEL_TYPE);
-  pixelRingAnimator->clear();
-
+  pixelRingAnimator = new PixelRingAnimator();
+  pixelRingAnimator->start(PIXEL_RING_PIN, NUM_PIXELS, NEO_PIXEL_TYPE, 5);
+  
   // Set up variables for the loop
   effect = -1;
   nextEffectChangeTime = 0;
@@ -97,7 +85,7 @@ void loop() {
   if (millis() >= nextEffectChangeTime) {
     
     // Move to the next effect, looping around if needed
-    effect = (effect + 1) % 4;
+    effect = (effect + 1) % 5;
     
     // Setup the effect and apply to ring
     switch(effect) {
@@ -114,6 +102,10 @@ void loop() {
         break;
 
       case 3:
+        setupFade2();
+        break;
+
+      case 4:
         setupAlternate();
         break;
     }
