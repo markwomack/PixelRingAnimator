@@ -72,7 +72,7 @@ void setupAlternate() {
 void setup() {
   // Create the animator, clear the ring
   pixelRingAnimator = new PixelRingAnimator();
-  pixelRingAnimator->start(PIXEL_RING_PIN, NUM_PIXELS, NEO_PIXEL_TYPE, 5);
+  pixelRingAnimator->start(PIXEL_RING_PIN, NUM_PIXELS, NEO_PIXEL_TYPE);
   
   // Set up variables for the loop
   effect = -1;
