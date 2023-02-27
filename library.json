@@ -1,0 +1,19 @@
+{
+    "name": "PixelRingAnimator",
+    "keywords": "neopixel, neopixel ring, pixel ring",
+    "description": "A library to animate neo pixel rings from Adafruit.",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/markwomack/PixelRingAnimator"
+    },
+    "authors":
+    {
+      "name": "Mark Womack",
+      "url": "https://github.com/markwomack",
+      "maintainer": true
+    },
+    "homepage": "https://github.com/markwomack/PixelRingAnimator",
+    "version": "0.0.1",
+    "frameworks": "arduino"
+  }
