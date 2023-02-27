@@ -54,8 +54,8 @@ class PixelRingAnimator {
   public:
     PixelRingAnimator();
 
-    //** Starts the PixelRingAnimator and the pixel ring connected to the
-    //*  ringPin. Must be called before executing any other methods.
+    //** Initializes and starts the PixelRingAnimator and the pixel ring.
+    //*  Must be called before executing any other methods.
     //*  ringPin - The pin the pixel ring data line is connected to.
     //*  numPixels - Number of pixels on the pixel ring.
     //*  pixelType - The type of neopixel used on the ring. See
@@ -86,7 +86,7 @@ class PixelRingAnimator {
     void doAlternate(PixelRingColor* colorOne, PixelRingColor* colorTwo);
     
     //** Updates the pattern to the next step. Call this method from the
-    //** sketch loop() method at the rate you want the pattern to change.
+    //*  sketch loop() method at the rate you want the pattern to change.
     void update(void);
 
   private:
