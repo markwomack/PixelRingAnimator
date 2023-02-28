@@ -13,8 +13,8 @@ project.
 ## Dependencies
 This library is dependent on the existing Adafruit NeoPixel library.
 A version of the library probably came with your Arduino IDE instance or can
-be downloaded from using the IDE. If not, the latest version of the
-library can be
+be downloaded using the IDE (at least version 2.0 support this). If not, the
+latest version of the library can be
 [downloaded from github here](https://github.com/adafruit/Adafruit_NeoPixel).
 
 ## Example
