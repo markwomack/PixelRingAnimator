@@ -11,7 +11,7 @@ PixelRingAnimator class for use more generally and not specific to any one
 project.
 
 ## Dependencies
-This library is dependent on the existing Adafruit NeoPixel library
+This library is dependent on the existing Adafruit NeoPixel library.
 A version of the library probably came with your Arduino IDE instance or can
 be downloaded from using the IDE. If not, the latest version of the
 library can be
