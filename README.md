@@ -7,8 +7,7 @@ arranged in a circular configuration. But being circular means that one can
 create animations that are fun and can be used to communicate state. I use
 them on my robots to indicate when the robot is doing something like moving
 or thinking. I have collected different animation patterns into the
-PixelRingAnimator class for use more generally and not specific to any one
-project.
+PixelRingAnimator class for use more generally.
 
 ## Dependencies
 This library is dependent on the existing Adafruit NeoPixel library.
