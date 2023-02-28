@@ -68,8 +68,8 @@ class PixelRingAnimator {
     //*              where you need it. Defaults to 0.
     void start(const uint8_t ringPin, const uint16_t numPixels, const neoPixelType pixelType, uint16_t basePixel = 0);
     
-    //** Clears all of the pixels to off (0, 0, 0).
-    void clear(void);
+    //** Stops any animation, sets all of the pixels to off (0, 0, 0).
+    void doOff(void);
     
     //** Starts the fade pattern, going between the start and end colors by
     //*  the number of steps. The number of steps should not be more than the

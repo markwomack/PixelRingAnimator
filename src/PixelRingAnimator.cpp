@@ -110,7 +110,8 @@ void PixelRingAnimator::start(const uint8_t ringPin, const uint16_t numPixels, c
   }
 }
 
-void PixelRingAnimator::clear() {
+void PixelRingAnimator::doOff() {
+  _mode = OFF;
   _neoPixel->clear();
   _neoPixel->show();
 }
@@ -159,6 +160,7 @@ void PixelRingAnimator::doAlternate(PixelRingColor* colorOne, PixelRingColor* co
 void PixelRingAnimator::update(void) {
   switch(_mode) {
     case OFF:
+      // do nothing
       break;
 
     case FADE:
