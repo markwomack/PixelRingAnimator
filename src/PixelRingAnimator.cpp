@@ -188,8 +188,9 @@ uint16_t PixelRingAnimator::getIndexWithOffset(const uint16_t index, const int o
   // But not really expecting big offsets here
   if (index == 0 && offset < 0) {
     newValue = 15 + (offset + 1);
-  } else
+  } else {
     newValue = (index + offset) % _numPixels;
+  }
   return newValue;
 }
 
